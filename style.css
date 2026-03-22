@@ -1,0 +1,63 @@
+body {
+    background-color: #f2f2f2;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+.logo h1 {
+    color: #0055aa; /* 巴哈標誌藍 */
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.content-box {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #0055aa;
+}
+
+h2 {
+    color: #333;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #0055aa;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#retry-btn {
+    background-color: #0055aa;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+#retry-btn:hover {
+    background-color: #003d7a;
+}
