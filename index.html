@@ -13,14 +13,31 @@
         </div>
         
         <div class="content-box">
-            <h2>伺服器龍體欠安...</h2>
-            <div class="hero-status">
-                <p>等級 99 的維修工程師正在施放「大復活術」</p>
-                <div class="loader"></div>
+            <div class="tag-notice">【系統公告】</div>
+            <h2>伺服器體力值 (HP) 歸零中...</h2>
+
+            <div class="status-container">
+                <div class="hp-bar-label">維修進度 (HP)</div>
+                <div class="hp-bar-bg">
+                    <div class="hp-bar-fill" id="hp-fill"></div>
+                </div>
+                <p id="status-text">勇者正在尋找補血藥草...</p>
             </div>
-            <p class="message">目前搶購人數過多，請給勇者一點時間準備裝備。</p>
-            <button id="retry-btn">嘗試重新連接</button>
+
+            <div class="rules-box">
+                <h3>根據《勇者村維修條例》：</h3>
+                <ul>
+                    <li>第一條：本站伺服器因過度操勞，暫時進入「沈睡狀態」。</li>
+                    <li>第二條：請勿對螢幕施放「憤怒之擊」，這不會加快修復速度。</li>
+                    <li>第三條：建議巴友先去喝杯咖啡，或翻閱最新一期的 GNN 新聞。</li>
+                </ul>
+            </div>
+
+        <div class="action-area">
+            <button id="retry-btn">施放「大復活術」重新連線</button>
+            <p class="small-hint">※ 若法力不足，請等候 5 分鐘後再試</p>
         </div>
+    </div>
 
         <div class="footer">
             <p>© 巴哈姆特電玩資訊站</p>
