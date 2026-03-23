@@ -154,6 +154,8 @@ body {
 
 .hp-bar-fill-red {
     background: #ff4e50;
+    height: 100%; /* 確保填滿父容器高度 */
+    width: 100%;
     transition: width 0.1s ease-out;
 }
 

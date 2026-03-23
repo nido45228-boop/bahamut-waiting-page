@@ -1,4 +1,4 @@
-// --- 🕹️ 史萊姆小遊戲邏輯 ---
+// --- 🕹️ 史萊姆小遊戲邏輯 (音效修復版) ---
 let killCount = 0;
 let currentSlimeHP = 100;
 const slimeMaxHP = 100;
@@ -7,19 +7,27 @@ const slimeEl = document.getElementById('slime');
 const slimeHPEl = document.getElementById('slime-hp');
 const killCountEl = document.getElementById('kill-count');
 
+// 取得音效元件
+const sndHit = document.getElementById('snd-hit');
+const sndDie = document.getElementById('snd-die');
+
 // 點擊史萊姆進行攻擊
 slimeEl.addEventListener('click', function() {
     if (this.classList.contains('slime-die')) return;
 
-    currentSlimeHP -= 25; // 加強攻擊力，點4下就死
+    // --- 【新增：音效播放邏輯】 ---
+    if (sndHit) {
+        sndHit.currentTime = 0; // 強制回到 0 秒，這樣連點才會有聲音
+        sndHit.play().catch(e => console.log("音效播放被瀏覽器攔截:", e));
+    }
 
+    currentSlimeHP -= 25; 
     let hpPercentage = (currentSlimeHP / slimeMaxHP) * 100;
-    // 確保血條不會小於 0%
     slimeHPEl.style.width = Math.max(0, hpPercentage) + '%';
 
-    // 攻擊受擊動畫
+    // 攻擊動畫
     slimeEl.classList.remove('slime-hit');
-    void slimeEl.offsetWidth; // 強制重繪，讓動畫能重複觸發
+    void slimeEl.offsetWidth; 
     slimeEl.classList.add('slime-hit');
 
     if (currentSlimeHP <= 0) {
@@ -31,10 +39,15 @@ function slimeDeath() {
     killCount++;
     killCountEl.innerText = killCount;
 
+    // --- 【新增：死亡音效播放】 ---
+    if (sndDie) {
+        sndDie.currentTime = 0;
+        sndDie.play().catch(e => console.log("音效播放被攔截:", e));
+    }
+
     slimeEl.classList.remove('slime-hit');
     slimeEl.classList.add('slime-die');
 
-    // 修正：300ms 後史萊姆大復活，這裡要寫數字 300
     setTimeout(() => {
         slimeEl.classList.remove('slime-die');
         currentSlimeHP = slimeMaxHP; 
