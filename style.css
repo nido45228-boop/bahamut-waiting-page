@@ -1,4 +1,4 @@
-/* --- 基礎設定與導覽列 --- */
+/* --- 基礎設定 --- */
 body {
     background-color: #F0F0F0;
     font-family: "Microsoft JhengHei", Helvetica, Arial, sans-serif;
@@ -8,6 +8,7 @@ body {
     color: #333;
 }
 
+/* --- 1. 模擬導覽列 --- */
 .baha-fake-nav {
     background-color: #0d89a2b6;
     color: #FFF;
@@ -18,8 +19,8 @@ body {
 }
 
 .nav-container {
-    width: 90%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 950px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -34,147 +35,136 @@ body {
 
 .fake-links { opacity: 0.8; }
 
-/* --- 版面結構 --- */
+/* --- 主版面結構 --- */
 .main-content { padding: 30px 0; }
-.container { width: 90%; max-width: 800px; margin: 0 auto; }
+
+.container {
+    width: 95%;
+    max-width: 950px; /* 增加總寬度，讓畫面更寬敞 */
+    margin: 0 auto;
+}
 
 .notice-title {
     border-bottom: 2px solid #0d89a2b6;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .notice-title h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #0d89a2b6;
     margin: 0;
-    padding: 5px 0;
+    padding: 8px 0;
 }
 
 .content-box {
     background: #FFF;
     border: 1px solid #D1D1D1;
-    border-radius: 3px;
+    border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .info-area {
     display: flex;
-    padding: 30px;
+    padding: 40px; /* 增加內邊距 */
     border-bottom: 1px solid #F0F0F0;
 }
 
+/* --- 左側裝飾圖示 --- */
 .status-visual {
-    width: 120px; /* 稍微縮小左側，給遊戲更多空間 */
+    width: 80px; /* 縮小左側，把空間留給右側遊戲 */
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .icon-placeholder {
-    font-size: 4rem;
-    opacity: 0.3;
+    font-size: 3.5rem;
+    opacity: 0.25;
     text-shadow: 2px 2px #BBB; 
 }
 
-.text-area { flex: 1; padding-left: 20px; line-height: 1.8; }
-.text-area h2 { font-size: 1.1rem; margin-top: 0; color: #c00; }
-
-/* --- 按鈕與冷卻 --- */
-.action-area { padding: 20px; text-align: center; background-color: #FBFBFB; }
-
-#retry-btn {
-    background-color: #FF8800;
-    color: white;
-    border: 1px solid #D67200;
-    padding: 10px 30px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: 0.3s;
+/* --- 右側內容區 --- */
+.text-area {
+    flex: 1;
+    padding-left: 35px; /* 增加與左側間距 */
+    line-height: 1.8;
 }
 
-#retry-btn:hover { background-color: #FF9922; }
-#retry-btn:disabled { background-color: #CCC; border-color: #BBB; color: #888; }
-.count-hint { color: #888; font-size: 0.8rem; margin-top: 10px; }
+.text-area h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: #c00;
+}
 
-/* --- Footer --- */
-.baha-fake-footer { text-align: center; color: #999; margin-top: 30px; }
-
-/* --- 🎮 史萊姆小遊戲樣式 (優化版) 🎮 --- */
+/* --- 🎮 史萊姆小遊戲樣式 🎮 --- */
 .game-box {
-    margin-top: 15px;
-    background: #F9F9F9;
-    padding: 15px;
-    border-radius: 4px;
+    margin-top: 25px;
+    background: #FBFBFB;
+    padding: 25px;
+    border-radius: 8px;
     border: 1px dashed #0055AA;
     text-align: center;
 }
 
-.game-header { font-weight: bold; color: #0055AA; margin-bottom: 10px; }
+.game-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0055AA;
+    margin-bottom: 15px;
+}
 
-/* 舞台置中設定 */
 .game-stage.solo {
     display: flex;
-    justify-content: center; /* 水平置中 */
+    justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .slime-target-container {
-    width: 100px; /* 控制史萊姆點擊區域的寬度 */
+    width: 250px; /* 拓寬點擊容器 */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* 史萊姆視覺本體 */
 .slime-visual {
-    font-size: 5rem; /* 史萊姆放大 */
+    font-size: 4rem; /* 巨大化史萊姆 */
     cursor: pointer;
     user-select: none;
-    transition: transform 0.05s; /* 點擊時縮放要快 */
-    line-height: 1; /* 防止 emoji 底部多餘空間 */
-    margin-bottom: 10px; /* 與血條距離 */
+    transition: transform 0.05s;
+    margin-bottom: 20px;
 }
 
-.slime-visual:hover { transform: scale(1.05); }
-.slime-visual:active { transform: scale(0.95); } /* 點擊下去的縮放感 */
+.slime-visual:active { transform: scale(0.9); }
 
-/* 當你想用圖片時，預設的圖片樣式 */
 .slime-img-placeholder {
-    max-width: 100%;
+    width: 250px;
     height: auto;
-    display: block;
 }
 
-/* 小型血條 */
-.hp-bar-bg.small {
+/* 遊戲血條 */
+.hp-bar-bg-small {
     background: #e0e0e0;
-    height: 8px; /* 稍微加高血條 */
-    border-radius: 4px;
+    height: 10px;
+    border-radius: 5px;
     overflow: hidden;
-    width: 80%; /* 血條比史萊姆窄一點 */
+    width: 100%;
     border: 1px solid #bbb;
 }
 
-.hp-bar-fill.red {
+.hp-bar-fill-red {
     background: #ff4e50;
     transition: width 0.1s ease-out;
 }
 
-/* 動畫 class */
+/* 動畫效果 */
 .slime-hit { animation: slimeHitAnim 0.3s ease; }
 .slime-die { animation: slimeDieAnim 0.3s ease-out forwards; }
 
-/* 受擊動畫：強烈震動 + 縮放 */
 @keyframes slimeHitAnim {
-    0% { transform: scale(1) translateX(0); }
-    20% { transform: scale(0.9) translateX(-5px); opacity: 0.8; }
-    40% { transform: scale(1.1) translateX(5px); }
-    60% { transform: scale(0.95) translateX(-3px); }
-    80% { transform: scale(1.05) translateX(3px); }
-    100% { transform: scale(1) translateX(0); }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2) rotate(5deg); opacity: 0.7; color: red; }
+    100% { transform: scale(1); }
 }
 
 @keyframes slimeDieAnim {
@@ -182,5 +172,37 @@ body {
     100% { transform: scale(0); opacity: 0; }
 }
 
-.game-hint { color: #888; font-size: 0.8rem; margin: 5px 0; }
-.game-stats { font-weight: bold; font-size: 1rem; color: #333; }
+.game-stats {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* --- 底部按鈕 --- */
+.action-area {
+    padding: 30px;
+    text-align: center;
+    background-color: #FBFBFB;
+}
+
+#retry-btn {
+    background-color: #FF8800;
+    color: white;
+    border: 1px solid #D67200;
+    padding: 15px 50px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#retry-btn:hover { background-color: #FF9922; transform: translateY(-2px); }
+#retry-btn:disabled { background-color: #CCC; cursor: not-allowed; }
+
+.baha-fake-footer {
+    text-align: center;
+    color: #999;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
