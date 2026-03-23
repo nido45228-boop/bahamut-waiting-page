@@ -3,46 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>召喚中...請稍候 | 巴哈姆特電玩資訊站</title>
+    <title>【系統公告】伺服器目前忙碌中 - 巴哈姆特電玩資訊站</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <h1>BAHAMUT</h1>
+    
+    <div class="baha-fake-nav">
+        <div class="nav-container">
+            <a href="#" class="fake-logo">BAHAMUT</a>
+            <div class="fake-links">GNN新聞 | 哈啦區 | 勇者小屋 | 電玩瘋</div>
         </div>
-        
-        <div class="content-box">
-            <div class="tag-notice">【系統公告】</div>
-            <h2>伺服器體力值 (HP) 歸零中...</h2>
+    </div>
 
-            <div class="status-container">
-                <div class="hp-bar-label">維修進度 (HP)</div>
-                <div class="hp-bar-bg">
-                    <div class="hp-bar-fill" id="hp-fill"></div>
+    <div class="main-content">
+        <div class="container">
+            
+            <div class="notice-title">
+                <h1>【重要】伺服器連線繁忙中，請勇者稍候</h1>
+            </div>
+
+            <div class="content-box">
+                <div class="info-area">
+                    
+                    <div class="status-visual">
+                        <div class="icon-placeholder">
+                            <div class="pixel-dragon">💤🐲</div>
+                        </div>
+                    </div>
+
+                    <div class="text-area">
+                        <h2>尊敬的巴友您好：</h2>
+                        <p>由於目前湧入大量「野生勇者」同時施放技能，造成大地圖連線異常。</p>
+                        <p>我們已緊急派遣等級 99 的修復工匠前往處理，預計很快就能恢復。請您稍作休息，喝口水，或多點擊幾次「重新召喚」。</p>
+                        
+                        <div class="extra-links">
+                            <span>在等待時，您可以先逛逛：</span>
+                            <a href="#" target="_blank">【GNN】今日遊戲頭條</a>
+                            <a href="#" target="_blank">【熱門】哈啦板討論</a>
+                        </div>
+                    </div>
                 </div>
-                <p id="status-text">勇者正在尋找補血藥草...</p>
+
+                <div class="action-area">
+                    <button id="retry-btn">重新召喚伺服器</button>
+                    <p class="count-hint">（如果連線失敗，按鈕會暫時無法使用，請冷靜）</p>
+                </div>
             </div>
 
-            <div class="rules-box">
-                <h3>根據《勇者村維修條例》：</h3>
-                <ul>
-                    <li>第一條：本站伺服器因過度操勞，暫時進入「沈睡狀態」。</li>
-                    <li>第二條：請勿對螢幕施放「憤怒之擊」，這不會加快修復速度。</li>
-                    <li>第三條：建議巴友先去喝杯咖啡，或翻閱最新一期的 GNN 新聞。</li>
-                </ul>
+            <div class="baha-fake-footer">
+                <p>Copyright © Bahamut Gamer's Community. All rights reserved.</p>
+                <p>※ 請勿對螢幕施放「憤怒之擊」，本站不予理賠</p>
             </div>
-
-        <div class="action-area">
-            <button id="retry-btn">施放「大復活術」重新連線</button>
-            <p class="small-hint">※ 若法力不足，請等候 5 分鐘後再試</p>
         </div>
     </div>
 
-        <div class="footer">
-            <p>© 巴哈姆特電玩資訊站</p>
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
