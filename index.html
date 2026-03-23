@@ -36,16 +36,19 @@
                         
                         <div class="game-box">
                             <div class="game-header">【微型任務】清理路邊的史萊姆</div>
-                            <div class="game-stage">
-                                <div class="pixel-hero">⚔️勇者</div>
-                                <div class="vs">VS</div>
-                                <div class="pixel-slime-container">
-                                    <div class="pixel-slime" id="slime">💧</div>
+                            
+                            <div class="game-stage solo">
+                                <div class="slime-target-container">
+                                    <div class="slime-visual" id="slime">
+                                        <img src="slime.png" alt="史萊姆" class="slime-img-placeholder">
+                                        </div>
+
                                     <div class="hp-bar-bg small">
                                         <div class="hp-bar-fill red" id="slime-hp" style="width: 100%;"></div>
                                     </div>
                                 </div>
                             </div>
+
                             <p class="game-hint">（連續點擊史萊姆進行攻擊！）</p>
                             <div class="game-stats">
                                 擊殺數: <span id="kill-count">0</span>
