@@ -17,14 +17,12 @@
 
     <div class="main-content">
         <div class="container">
-            
             <div class="notice-title">
                 <h1>【重要】伺服器連線繁忙中，請勇者稍候</h1>
             </div>
 
             <div class="content-box">
                 <div class="info-area">
-                    
                     <div class="status-visual">
                         <div class="icon-placeholder">
                             <div class="pixel-dragon">💤🐲</div>
@@ -33,20 +31,32 @@
 
                     <div class="text-area">
                         <h2>尊敬的巴友您好：</h2>
-                        <p>由於目前湧入大量「野生勇者」同時施放技能，造成大地圖連線異常。</p>
-                        <p>我們已緊急派遣等級 99 的修復工匠前往處理，預計很快就能恢復。請您稍作休息，喝口水，或多點擊幾次「重新召喚」。</p>
+                        <p>由於目前湧入大量「野生勇者」同時施放技能，造成連線異常。</p>
+                        <p>派遣等級 99 的修復工匠處理中。若閒著沒事，可以幫忙清理一下路邊的史萊姆。</p>
                         
-                        <div class="extra-links">
-                            <span>在等待時，您可以先逛逛：</span>
-                            <a href="#" target="_blank">【GNN】今日遊戲頭條</a>
-                            <a href="#" target="_blank">【熱門】哈啦板討論</a>
+                        <div class="game-box">
+                            <div class="game-header">【微型任務】清理路邊的史萊姆</div>
+                            <div class="game-stage">
+                                <div class="pixel-hero">⚔️勇者</div>
+                                <div class="vs">VS</div>
+                                <div class="pixel-slime-container">
+                                    <div class="pixel-slime" id="slime">💧</div>
+                                    <div class="hp-bar-bg small">
+                                        <div class="hp-bar-fill red" id="slime-hp" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-hint">（連續點擊史萊姆進行攻擊！）</p>
+                            <div class="game-stats">
+                                擊殺數: <span id="kill-count">0</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="action-area">
                     <button id="retry-btn">重新召喚伺服器</button>
-                    <p class="count-hint">（如果連線失敗，按鈕會暫時無法使用，請冷靜）</p>
+                    <p class="count-hint">（如果連線失敗，按鈕會暫時進入冷卻，請冷靜）</p>
                 </div>
             </div>
 
