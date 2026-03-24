@@ -11,6 +11,10 @@ const killCountEl = document.getElementById('kill-count');
 const sndHit = document.getElementById('snd-hit');
 const sndDie = document.getElementById('snd-die');
 
+// --- 🔊 設定音量 (範圍是 0.0 到 1.0) ---
+sndHit.volume = 0.3; // 設定為 30% 音量 (原本是 1.0)
+sndDie.volume = 0.4; // 設定為 40% 音量
+
 // 點擊史萊姆進行攻擊
 slimeEl.addEventListener('click', function() {
     if (this.classList.contains('slime-die')) return;
@@ -36,23 +40,26 @@ slimeEl.addEventListener('click', function() {
 });
 
 function slimeDeath() {
+    if (sndDie) {
+        sndDie.currentTime = 0;
+        sndDie.play().catch(e => console.error("播放失敗:", e));
+    }
+
+    // 擊殺數加一
     killCount++;
     killCountEl.innerText = killCount;
 
-    // --- 【新增：死亡音效播放】 ---
-    if (sndDie) {
-        sndDie.currentTime = 0;
-        sndDie.play().catch(e => console.log("音效播放被攔截:", e));
-    }
+    // 確保血條歸零
+    slimeHPEl.style.width = '0%';
 
-    slimeEl.classList.remove('slime-hit');
+    // 史萊姆消失動畫
     slimeEl.classList.add('slime-die');
 
     setTimeout(() => {
         slimeEl.classList.remove('slime-die');
         currentSlimeHP = slimeMaxHP; 
-        slimeHPEl.style.width = '100%'; 
-    }, 300);
+        slimeHPEl.style.width = '100%'; // 重生補滿
+    }, 400);
 }
 
 
