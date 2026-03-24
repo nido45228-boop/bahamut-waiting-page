@@ -161,7 +161,7 @@ body {
 
 /* 動畫效果 */
 .slime-hit { animation: slimeHitAnim 0.3s ease; }
-.slime-die { animation: slimeDieAnim 0.3s ease-out forwards; }
+.slime-die { animation: slimeDieAnim 0.5s ease-out forwards; }
 
 @keyframes slimeHitAnim {
     0% { transform: scale(1); }
